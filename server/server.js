@@ -6,10 +6,13 @@ const app = express();
 
 const pool = require("./db");
 
+const cors = require("cors");
+
+//Solving the cors error
+app.use(cors({ origin: "http://localhost:5173" }));
+
 //Get all todos from our postgresql db
 app.get("/users", async (req, res) => {
-  const userEmail = "p2arthur@gmail.com";
-
   try {
     const users = await pool.query("SELECT * FROM users");
     res.json(users.rows);
