@@ -1,3 +1,3 @@
-const progressBar = () => <div>ProgressBar</div>;
+const progressBar = () => <div>/////////////////</div>;
 
 export default progressBar;
