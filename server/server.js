@@ -12,10 +12,16 @@ const cors = require("cors");
 app.use(cors({ origin: "http://localhost:5173" }));
 
 //Get all todos from our postgresql db
-app.get("/users", async (req, res) => {
+app.get("/todos/:userEmail", async (req, res) => {
+  const { userEmail } = req.params;
+  console.log(userEmail);
   try {
-    const users = await pool.query("SELECT * FROM users");
-    res.json(users.rows);
+    const todos = await pool.query(
+      "SELECT * FROM todos WHERE user_email = $1",
+      [userEmail]
+    );
+
+    res.json(todos.rows);
   } catch (error) {
     console.log(error);
   }
