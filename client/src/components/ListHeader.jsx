@@ -1,10 +1,16 @@
-const ListHeeader = ({ listName, emoji }) => {
+import Modal from "./Modal";
+import { useState } from "react";
+
+const ListHeader = ({ listName, emoji }) => {
+  const [showModal, setShowModal] = useState(false);
+
   const handleSignOut = () => {
     console.log("Sign out");
   };
 
   const handleAddItem = () => {
     console.log("Add item");
+    setShowModal(!showModal);
   };
 
   return (
@@ -21,8 +27,11 @@ const ListHeeader = ({ listName, emoji }) => {
           SIGN OUT
         </button>
       </div>
+      {showModal ? (
+        <Modal modalMode="create" setShowModal={setShowModal} />
+      ) : null}
     </div>
   );
 };
 
-export default ListHeeader;
+export default ListHeader;
