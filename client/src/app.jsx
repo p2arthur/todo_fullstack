@@ -3,7 +3,7 @@ import ListHeader from "./components/ListHeader";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { fetchTodos } from "./store";
-import Skeleton from "./components/Skelleton";
+import Skeleton from "./components/Skeleton";
 
 const App = () => {
   const dispatch = useDispatch();
