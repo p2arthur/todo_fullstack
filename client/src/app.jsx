@@ -3,6 +3,7 @@ import ListHeader from "./components/ListHeader";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { fetchTodos } from "./store";
+import Skeleton from "./components/Skelleton";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -31,7 +32,7 @@ const App = () => {
   return (
     <div className="app">
       <ListHeader listName="Vaction ticks" emoji="🏖" />
-      {renderedTodos}
+      {isLoadingtoDo ? <Skeleton className="w-full h-10" /> : renderedTodos}
     </div>
   );
 };
