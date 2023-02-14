@@ -40,6 +40,38 @@ body {
   font-size: 10px;
 }
 
+.button.button_create {
+  border: 1px solid rgb(108, 115, 148);
+  color: rgb(108, 115, 148);
+  text-transform: uppercase;
+}
+
+.button.button_create:hover {
+  background-color: rgb(131, 138, 172);
+}
+
+.button.button_signout {
+  border: 1.5px solid rgb(255, 175, 163);
+  background-color: rgb(255, 175, 163);
+}
+
+.button.button_signout:hover {
+  background-color: rgb(175, 94, 94);
+  border-color: rgb(175, 94, 94);
+  color: white;
+}
+
+.button.button_signout:active {
+  border: 1.5px solid rgb(175, 81, 81);
+  background-color: rgb(175, 81, 81);
+  color: rgb(255, 255, 255);
+}
+
+.button.button_create:active {
+  background-color: rgb(108, 115, 148);
+  color: rgb(255, 255, 255);
+}
+
 .button.edit {
   border: 1.5px solid rgb(141, 181, 145);
   color: rgb(141, 181, 145);
